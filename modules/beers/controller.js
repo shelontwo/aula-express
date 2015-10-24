@@ -5,7 +5,7 @@ var Controller = {
 	var dados = {
 			name: 'Skol',
 			description: 'Mijo de rato',
-			alcohol: 4.5,
+			alcohol: 4.5, 
 			price: 3.0,
 			category: 'pilsen'
 		};
