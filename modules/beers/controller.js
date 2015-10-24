@@ -31,6 +31,19 @@ var Controller = {
 			res.json(msg);
 		});
 	},
+	get: function(req, res) {
+		var query = {_id: req.params.id};
+		Model.findOne(query, function(err, data) {
+			if(err) {
+				console.log("Erro: ", err);
+				msg = err;
+			} else {
+				console.log("listagem: ", data);
+				msg = data;
+			}
+			res.json(msg);
+		});
+	},
 	update: function(req, res) {
 		var query = {_id: req.params.id};
 		var mod = req.body;
