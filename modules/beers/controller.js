@@ -59,7 +59,8 @@ var Controller = {
 		});
 	},
 	delete: function(req, res) {
-		var query = {name: /Skol/i};
+		var query = {_id: req.params.id};
+		
 		Model.remove(query, function(err, data) {
 			if(err) {
 				console.log("Erro: ", err);
