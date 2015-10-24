@@ -32,13 +32,8 @@ var Controller = {
 		});
 	},
 	update: function(req, res) {
-		var query = {name: /Skol/i};
-		var mod = {
-			name: 'Brahma',
-			alcohol: 4,
-			price: 6,
-			category: 'pilsen'
-		};
+		var query = {_id: req.params.id};
+		var mod = req.body;
 		Model.update(query, mod, function(err, data) {
 			if(err) {
 				console.log("Erro: ", err);

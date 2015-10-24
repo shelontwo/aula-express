@@ -14,5 +14,11 @@ router.post('/', function(req, res, next) {
 	Controller.create(req, res);
 });
 
+/* ATUALIZANDO */
+
+router.put('/:id', function(req, res, next) {
+	Controller.update(req, res);
+});
+
 
 module.exports = router;
