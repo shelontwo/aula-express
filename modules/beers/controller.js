@@ -16,12 +16,12 @@ var Controller = {
 		model.save(function (err, data) {
 			if(err) {
 				console.log("Erro: ", err);
-				msg = "Erro: " + err;
+				msg = err;
 			} else {
 				console.log("Cerveja inserida.", data);
-				msg = "Cerveja inserida. " + data;
+				msg = data;
 			}
-			res.end(msg);
+			res.json(msg);
 		});
 	},
 	retrieve: function(req, res) {
@@ -29,12 +29,12 @@ var Controller = {
 		Model.find(query, function(err, data) {
 			if(err) {
 				console.log("Erro: ", err);
-				msg = "Erro: " + err;
+				msg = err;
 			} else {
 				console.log("listagem: ", data);
-				msg = "Listagem: " + data;
+				msg = data;
 			}
-			res.end(msg);
+			res.json(msg);
 		});
 	},
 	update: function(req, res) {
@@ -48,12 +48,12 @@ var Controller = {
 		Model.update(query, mod, function(err, data) {
 			if(err) {
 				console.log("Erro: ", err);
-				msg = "Erro: " + err;
+				msg = err;
 			} else {
 				console.log("Cervejas atualizadas com sucesso: ", data);
-				msg = "Cervejas atualizadas com sucesso: " + data;
+				msg = data;
 			}
-			res.end(msg);
+			res.json(msg);
 		});
 	},
 	delete: function(req, res) {
@@ -61,12 +61,12 @@ var Controller = {
 		Model.remove(query, function(err, data) {
 			if(err) {
 				console.log("Erro: ", err);
-				msg = "Erro: " + err;
+				msg = err;
 			} else {
 				console.log("Cerveja deletada com sucesso, quantidade: ", data.result);
-				msg = "Cerveja deletada com sucesso, quantidade: " + data.result;
+				msg = data.result;
 			}
-			res.end(msg);
+			res.json(msg);
 		});
 	}
 }
