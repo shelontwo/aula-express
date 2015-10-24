@@ -2,13 +2,7 @@ var Model = require('./model');
 
 var Controller = {
 	create: function(req, res) {
-	var dados = {
-			name: 'Skol',
-			description: 'Mijo de rato',
-			alcohol: 4.5, 
-			price: 3.0,
-			category: 'pilsen'
-		};
+		var dados = req.body;
 
 		var model = new Model(dados);
 		var msg = '';

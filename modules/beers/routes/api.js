@@ -8,4 +8,11 @@ router.get('/', function(req, res, next) {
 	Controller.retrieve(req,res);
 });
 
+/* CRIANDO */
+
+router.post('/', function(req, res, next) {
+	Controller.create(req, res);
+});
+
+
 module.exports = router;
